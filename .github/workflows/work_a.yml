@@ -24,15 +24,17 @@ jobs:
 
           # Commit and push changes to branch_b
           git fetch origin branch_b
-          git checkout branch_b # Create and switch to branch_b if not already existing
+          git checkout -b branch_b # Create and switch to branch_b if not already existing
           git add test2.txt
           git commit -m "Add test file"
           git push origin branch_b
 
-        - name: Test
-          run: |
-          curl -X POST https://api.github.com/repos/:AtitBimali/worflow_branch_trigger:/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.github_action_test }} \
-          --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"$GITHUB_REPOSITORY"'" }}'
-        - uses: actions/checkout@v3
+      - name: Test
+        run: |
+          curl -X POST "https://api.github.com/repos/AtitBimali/workflow_branch_trigger/dispatches" \
+            -H "Accept: application/vnd.github.everest-preview+json" \
+            -u "${{ secrets.github_action_test }}" \
+            --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"${GITHUB_REPOSITORY}"'" }}'
+
+      - name: Checkout again
+        uses: actions/checkout@v2
