@@ -20,7 +20,7 @@ jobs:
           git config --global user.name "AtitBimali"
 
           # Create a simple text file
-          echo "This is a test file." > test2.txt
+          echo "This is a test file." > test3.txt
 
           # Commit and push changes to branch_b
           git fetch origin branch_b
