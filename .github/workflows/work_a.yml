@@ -23,4 +23,4 @@ jobs:
           git checkout branch_b
           git add .
           git commit -m "Add build artifacts"
-          git push origin build
+          git push origin branch_b
