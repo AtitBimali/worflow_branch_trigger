@@ -25,8 +25,7 @@ jobs:
           # Commit and push changes to branch_b
           git fetch origin branch_b
           git checkout -b branch_b
-          git pull origin branch_b
-          git add test2.txt
+          git add test3.txt
           git commit -m "Add test file"
           git push origin branch_b
 
