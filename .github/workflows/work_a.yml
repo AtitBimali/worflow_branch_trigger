@@ -24,10 +24,13 @@ jobs:
 
       - name: Test
         run: |
-          curl -X POST "https://api.github.com/repos/AtitBimali/workflow_branch_trigger/dispatches" \
+          echo "GitHub Repository: $GITHUB_REPOSITORY"
+          RESPONSE=$(curl -X POST "https://api.github.com/repos/AtitBimali/workflow_branch_trigger/dispatches" \
             -H "Accept: application/vnd.github.everest-preview+json" \
             -u "${{ secrets.ACTION_PAT }}" \
-            --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"${GITHUB_REPOSITORY}"'" }}'
+            --data '{"event_type": "Trigger Workflow", "client_payload": { "repository": "'"${GITHUB_REPOSITORY}"'" }}')
+          echo "API Response: $RESPONSE"
+
 
       - name: Checkout again
         uses: actions/checkout@v2
