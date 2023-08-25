@@ -1,9 +1,12 @@
 name: CD
 
 on:
-  push:
-    branches:
-      - branch_a
+  workflow_dispatch:
+     inputs:
+      CD:
+        description: 'CD 2 which will be triggered'
+        required: true
+        default: 'CD'
 
 jobs:
   build:
