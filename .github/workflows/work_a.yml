@@ -20,7 +20,7 @@ jobs:
           git config --global user.email "atitbimali10@gmail.com"
           git config --global user.name "AtitBimali"
           git fetch origin branch_b # Fetch the latest changes from the remote build branch
-          git checkout -b branch_b
+          git checkout branch_b
           git add .
           git commit -m "Add build artifacts"
           git push origin build
