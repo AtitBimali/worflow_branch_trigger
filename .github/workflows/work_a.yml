@@ -22,13 +22,6 @@ jobs:
           # Create a simple text file
           echo "This is a test file." > test3.txt
 
-          # Commit and push changes to branch_b
-          git fetch origin branch_b
-          git checkout -b branch_b
-          git add test3.txt
-          git commit -m "Add test file"
-          git push origin branch_b
-
       - name: Test
         run: |
           curl -X POST "https://api.github.com/repos/AtitBimali/workflow_branch_trigger/dispatches" \
