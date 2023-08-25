@@ -20,10 +20,10 @@ jobs:
           git config --global user.name "AtitBimali"
 
           # Create a simple text file
-          echo "This is a test file." > test.txt
+          echo "This is a test file." > test2.txt
 
           # Commit and push changes to branch_b
           git checkout -b branch_b # Create and switch to branch_b if not already existing
-          git add test.txt
+          git add test2.txt
           git commit -m "Add test file"
           git push origin branch_b
