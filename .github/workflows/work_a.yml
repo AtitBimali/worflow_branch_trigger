@@ -23,7 +23,8 @@ jobs:
           echo "This is a test file." > test2.txt
 
           # Commit and push changes to branch_b
-          git checkout -b branch_b # Create and switch to branch_b if not already existing
+          git fetch origin branch_b
+          git checkout branch_b # Create and switch to branch_b if not already existing
           git add test2.txt
           git commit -m "Add test file"
           git push origin branch_b
