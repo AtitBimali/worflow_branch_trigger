@@ -20,6 +20,6 @@ jobs:
           git config --global user.email "atitbimali10@gmail.com"
           git config --global user.name "AtitBimali"
           git checkout -b branch_b
-          git add .
+          git add --all
           git commit -m "Add build artifacts"
           git push origin build
